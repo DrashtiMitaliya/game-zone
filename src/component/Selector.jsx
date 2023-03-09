@@ -1,16 +1,12 @@
 import React from 'react';
-
 import Form from 'react-bootstrap/Form';
 import { useSelector } from 'react-redux';
-
 export const Selector = () => {
     let uniqeData = []
     const userInfoArray = useSelector((state) => state.user);
 
     return (
-
         <div className='main'>
-
             {userInfoArray.users.map(item => {
                 if (uniqeData.includes(item.platform)) {
                     return null
@@ -19,15 +15,20 @@ export const Selector = () => {
                     uniqeData.push(item.platform)
                 }
             })}
-            <Form.Select aria-label="Default select example" className='w-25 m-auto my-5'>
+
+
+
+            <div >
+                < Form.Select className='w-25 m-auto my-5' placeholder='select platform'>
+                    {uniqeData.map((item) => (<option value={item}>{item}</option>))}
+                </Form.Select>
 
                 <div>
-
-                    {/* {uniqeData.map(displaydata =>(<option>{displaydata}</option>))} */}
-                    {/* { console.log(uniqeData)} */}
+                    {userInfoArray.filter( currentElement=> currentElement.users.platform(item)).map( currentElement=> (
+                    {currentElement}
+                    ))}
                 </div>
-
-            </Form.Select>
+            </div>
 
         </div>
     )

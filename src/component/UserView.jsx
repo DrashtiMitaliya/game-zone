@@ -7,23 +7,17 @@ import Card from 'react-bootstrap/Card';
 
 
 export const UserView = () => {
-
-    // const [users ,setUsers] =useState( [] )
-
     const userInfoArray = useSelector((state) => state.user);
-
     const dispatch = useDispatch();
-
     useEffect(() => {
         dispatch(fetchInformation())
-
     }, [])
 
     return (
         <div>
 
             <div className="container">
-                <div className="row  ">
+                 <div className="row  ">
 
                     {
                         userInfoArray ? userInfoArray.users.map((currentElement) => {

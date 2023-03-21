@@ -1,0 +1,30 @@
+/* Styling the search bar. */
+search-container {
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid gray;
+}
+.dropdown .dropdown-row {
+  cursor: pointer;
+  text-align: start;
+  margin: 2px 0;
+  background-color: #f0f8ff !important;
+}
+
+.dropdown:empty {
+  border: none;
+}
+
+input {
+  width: 250px;
+}
+
+.search-inner {
+  display: flex;
+}/*# sourceMappingURL=style.css.map */
